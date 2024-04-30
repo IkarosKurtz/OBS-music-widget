@@ -1,0 +1,1 @@
+# OBS music widget with Last.fm integration

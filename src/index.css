@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Lexend Variable', sans-serif;
+  color: white
+}
+
+.widget {
+  @apply flex relative items-center;
+}
+
+.cover {
+  @apply h-32 w-32 rounded-lg object-fill;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+.info-container {
+  @apply flex flex-col justify-center -ml-[20px] -z-[1] pl-[35px] w-[400px];
+  @apply rounded-r-lg pr-[20px] relative transition-all duration-[.5s];
+  height: 100px;
+}
+
+.info-song-bg {
+  @apply absolute top-0 left-0 w-full h-full -z-[2] rounded-r-lg;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  filter: blur(4px);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.90;
+}
+
+.info-song-bg-filter {
+  @apply absolute top-0 left-0 w-full h-full -z-[3] rounded-r-lg opacity-70;
+  background-color: black;
+}
