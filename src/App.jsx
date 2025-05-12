@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import Marquee from 'react-fast-marquee'
 
-const TRACK_API_URL = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=IkarosKurtz&api_key=${import.meta.env.VITE_LAST_FM_API_KEY}&format=json`
+const TRACK_API_URL = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${import.meta.env.VITE_LAST_FM_USERNAME}&api_key=${import.meta.env.VITE_LAST_FM_API_KEY}&format=json`
 const ARTIST_API_URL = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=$artist&api_key=${import.meta.env.VITE_LAST_FM_API_KEY}&format=json`
 const UGLY_STAR = 'https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png'
 
