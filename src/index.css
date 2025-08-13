@@ -4,27 +4,91 @@
 
 :root {
   font-family: 'Lexend Variable', sans-serif;
-  color: white
+  color: white;
 }
 
+#root {
+  width: 100vw;
+}
+
+/* Normal Music Widget */
+
 .widget {
-  @apply flex relative items-center;
+  @apply flex relative;
+
+  width: 500px;
 }
 
 .cover {
-  @apply h-32 w-32 rounded-lg object-fill;
+  @apply size-32 rounded-lg object-fill;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.music-bar {
+  @apply flex relative w-full;
+}
+
+.song-bg {
+  @apply absolute top-[10px] -left-[20px];
+}
+
+.music-bar-info {
+  @apply flex flex-col justify-center -ml-[20px] -z-[1] px-[35px] w-[400px];
+}
+
+.music-bar-song-bg {
+  @apply w-full -z-[2] rounded-lg;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
+  filter: blur(4px);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.90;
+  height: 110px;
+}
+
+.music-bar-song-bg-filter {
+  @apply w-full -z-[3] rounded-lg opacity-70;
+  background-color: black;
+  height: 110px;
+}
+
+
+.new-song-found {
+  animation: new-song 1.5s linear;
+}
+
+@keyframes new-song {
+  0% {
+    transform: translateX(0);
+    z-index: -5;
+  }
+
+  50% {
+    transform: translateX(-100%);
+    z-index: -5;
+  }
+
+  100% {
+    transform: translateX(0);
+    z-index: -5;
+  }
+}
+
+/* Lite Music Widget */
+
+.widget-lite {
+  @apply flex relative items-center;
+  height: 75px;
 }
 
 .info-container {
   @apply flex flex-col justify-center -ml-[20px] -z-[1] pl-[35px] w-[400px];
-  @apply rounded-r-lg pr-[20px] relative transition-all duration-[.5s];
-  height: 100px;
+  @apply rounded-lg pr-[20px] relative transition-all duration-[.5s];
 }
 
-.info-song-bg {
-  @apply absolute top-0 left-0 w-full h-full -z-[2] rounded-r-lg;
+.info-song-bg-lite {
+  @apply absolute top-0 left-0 w-full h-full -z-[2] rounded-lg;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
   filter: blur(4px);
@@ -33,7 +97,7 @@
   opacity: 0.90;
 }
 
-.info-song-bg-filter {
-  @apply absolute top-0 left-0 w-full h-full -z-[3] rounded-r-lg opacity-70;
+.info-song-bg-filter-lite {
+  @apply absolute top-0 left-0 w-full h-full -z-[3] rounded-lg opacity-70;
   background-color: black;
 }
