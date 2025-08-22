@@ -25,7 +25,9 @@
 }
 
 .music-bar {
-  @apply flex relative w-full;
+  @apply flex relative;
+  transition: all 0.5s ease-in-out;
+  z-index: -5;
 }
 
 .song-bg {
@@ -53,27 +55,6 @@
   height: 110px;
 }
 
-
-.new-song-found {
-  animation: new-song 1.5s linear;
-}
-
-@keyframes new-song {
-  0% {
-    transform: translateX(0);
-    z-index: -5;
-  }
-
-  50% {
-    transform: translateX(-100%);
-    z-index: -5;
-  }
-
-  100% {
-    transform: translateX(0);
-    z-index: -5;
-  }
-}
 
 /* Lite Music Widget */
 

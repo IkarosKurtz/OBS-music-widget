@@ -9,7 +9,6 @@ interface WidgetProps {
 export function Widget({ track, divRef }: WidgetProps) {
   return (
     <div className="widget">
-      <div className="h-32 w-32 rounded-lg bg-white absolute -left-7 -z-[1]"></div>
       <img src={track.cover} className="cover" />
       <div ref={divRef} className="music-bar">
         <div className="music-bar-info">

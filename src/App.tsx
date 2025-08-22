@@ -41,10 +41,8 @@ function App() {
       if (latestTrack.name === track.title) {
         return;
       }
-      console.log(track);
-      console.log(artist);
 
-      divRef.current?.classList.add('new-song-found');
+      divRef.current!.style.marginLeft = '-380px';
 
       setTimeout(() => {
         setTrack({
@@ -54,7 +52,7 @@ function App() {
         });
 
         setTimeout(() => {
-          divRef.current?.classList.remove('new-song-found');
+          divRef.current!.style.marginLeft = '0px';
         }, 750);
       }, 750);
     }, 4_000);
@@ -63,7 +61,7 @@ function App() {
   }, [track]);
 
   return (
-    <div className="flex justify-between m-6 h-[128px]">
+    <div className="flex justify-between h-[128px]">
       <Widget track={track} divRef={divRef} />
       <WidgetLite track={track} />
     </div>
