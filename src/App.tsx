@@ -24,6 +24,7 @@ function App() {
       fetchTrackData();
       return;
     }
+
     const intervalId = setInterval(fetchTrackData, 4_000);
 
     return () => clearInterval(intervalId);
